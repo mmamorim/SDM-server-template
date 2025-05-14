@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser'
 import cors from "cors"
-import clapback from "@mmamorim/clapback"
+import db from "@mmamorim/clapback"
 
 const server = express();
 server.use(bodyParser.json());       // suporte para JSON-encoded bodies
@@ -12,6 +12,6 @@ server.use(cors())
 
 const PORT = process.env.PORT || 3000;
 
-await clapback.init({ server, port: PORT, dbFileName: 'db.json' })
+await db.init({ server, port: PORT, dbFileName: 'db.json' })
 
-export { server, clapback, PORT }
+export { server, db, PORT }

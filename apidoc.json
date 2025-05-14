@@ -24,7 +24,39 @@
         ],
         "responses": {
           "200": {
-            "description": "frutas response"
+            "description": "Operação bem sucedida"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "FRUTAS"
+        ],
+        "summary": "Adiciona fruta",
+        "description": "Adiciona uma fruta a lista de frutas",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fruta",
+            "description": "Objeto que descreve uma fruta",
+            "schema": {
+              "type": "object",
+              "required": [
+                "userName"
+              ],
+              "properties": {
+                "nome": { "type": "string", "example": "banana" },
+                "cor": { "type": "string", "example": "amarela" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação Inserção bem sucedida"
           }
         }
       }
